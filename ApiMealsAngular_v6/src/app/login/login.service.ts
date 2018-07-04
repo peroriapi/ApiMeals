@@ -62,7 +62,7 @@ const BASE_URL = environment.apiBase;
         });
 
         const options = new RequestOptions({withCredentials: true});
-        return this.http.get(URL +'/user',options).map(
+        return this.http.get(URL +'/logIn',options).map(
             response => {
                 this.processLogInResponse(response);
                 return this.user;

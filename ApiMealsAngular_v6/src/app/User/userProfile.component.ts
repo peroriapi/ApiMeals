@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginService } from '../login/login.service';
@@ -13,12 +13,16 @@ import { user } from '../Interfaces/User/user.model';
 
 export class userProfileComponent{
     loggedUser: user;
+    id: string;
     
 
 
-constructor(private loginService: LoginService, private userService: UserService) {
+constructor(private loginService: LoginService, private userService: UserService, private activatedRoute:ActivatedRoute) {
     this.loggedUser = this.loginService.getLoggedUser();
+    this.id = activatedRoute.snapshot.params['id'];
+    //this.loggedUser=this.userService.getUser(id);
 }
 
+    
 
 }

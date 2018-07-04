@@ -7,7 +7,7 @@ import { LoginService } from '../login/login.service';
 
 @Component({
     
-    selector:'SignUpComponent',
+    selector:'app-sign-up',
     templateUrl: './signUp.component.html',
 
 })

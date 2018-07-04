@@ -20,20 +20,9 @@ export class LoginComponent{
 
     logIn(event: any, userName:string, pass: string){
         event.preventDefault();
+
         this.loginService.logIn(userName, pass).subscribe(
-            user=>{
-                console.log(user);
-                if(this.form=="1"){
-                    this.router.navigate(['/login']);
-                }
-                else{
-                    this.router.navigate(['/']).then(
-                        response=>{
-                            this.router.navigate(['/login'])
-                        }
-                    );
-                }
-            },
+            user=>this.router.navigate(['/user']),
             error=>alert('Wrong user or password')
         );
     }
